@@ -1,0 +1,396 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background: linear-gradient(135deg, #F5F7FA 0%, #EEF1F5 100%);
+    color: #1C1C1E;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.3px;
+  }
+}
+
+@layer components {
+  /* Premium Glassmorphism Card */
+  .glass-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.06),
+      0 2px 8px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 12px 40px rgba(0, 0, 0, 0.08),
+      0 4px 12px rgba(0, 0, 0, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  /* Premium iOS Card */
+  .ios-card {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 100%);
+    border-radius: 20px;
+    box-shadow: 
+      0 10px 40px rgba(0, 0, 0, 0.08),
+      0 2px 8px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .ios-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 15px 50px rgba(0, 0, 0, 0.1),
+      0 5px 15px rgba(0, 0, 0, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+
+  /* Premium iOS Button Primary */
+  .ios-button, .btn-primary {
+    background: linear-gradient(135deg, #007AFF 0%, #0051D5 100%);
+    color: white;
+    font-weight: 600;
+    border-radius: 16px;
+    padding: 14px 24px;
+    box-shadow: 
+      0 8px 24px rgba(0, 122, 255, 0.25),
+      0 2px 8px rgba(0, 122, 255, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    letter-spacing: 0.3px;
+  }
+
+  .ios-button:hover, .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 12px 32px rgba(0, 122, 255, 0.3),
+      0 4px 12px rgba(0, 122, 255, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .ios-button:active, .btn-primary:active {
+    transform: scale(0.97) translateY(0);
+  }
+
+  /* Premium iOS Button Secondary */
+  .ios-button-secondary, .btn-secondary {
+    background: linear-gradient(135deg, #F5F5F7 0%, #E8E8EA 100%);
+    color: #007AFF;
+    font-weight: 600;
+    border-radius: 16px;
+    padding: 14px 24px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+      0 4px 12px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    letter-spacing: 0.3px;
+  }
+
+  .ios-button-secondary:hover, .btn-secondary:hover {
+    background: linear-gradient(135deg, #EBEBED 0%, #DCDCE0 100%);
+    transform: translateY(-1px);
+    box-shadow: 
+      0 6px 16px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .ios-button-secondary:active, .btn-secondary:active {
+    transform: scale(0.97);
+  }
+
+  /* Premium iOS List Item */
+  .ios-list-item {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 100%);
+    border-radius: 16px;
+    padding: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+      0 2px 8px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .ios-list-item:hover {
+    background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F7 100%);
+    transform: translateY(-1px);
+    box-shadow: 
+      0 4px 12px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .ios-list-item:active {
+    transform: scale(0.98);
+  }
+
+  /* Premium iOS Section Header */
+  .ios-section-header {
+    font-size: 13px;
+    font-weight: 700;
+    color: #8E8E93;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 12px;
+  }
+
+  /* iOS Divider */
+  .ios-divider {
+    height: 1px;
+    background-color: #D1D1D6;
+    margin: 16px 0;
+  }
+
+  /* Premium iOS Badge */
+  .ios-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 12px;
+    min-width: 24px;
+    height: 24px;
+    box-shadow: 
+      0 4px 12px rgba(255, 59, 48, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.3px;
+  }
+
+  /* Premium Glassmorphism Effect */
+  .glass-effect {
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.8) 0%, 
+      rgba(255, 255, 255, 0.7) 100%);
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+
+  /* iOS Dark Mode - Premium */
+  .dark .glass-effect {
+    background: linear-gradient(135deg, 
+      rgba(28, 28, 30, 0.85) 0%, 
+      rgba(28, 28, 30, 0.8) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .glass-card {
+    background: linear-gradient(135deg, 
+      rgba(44, 44, 46, 0.95) 0%, 
+      rgba(44, 44, 46, 0.9) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  /* Premium iOS Input */
+  .ios-input {
+    width: 100%;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F7 100%);
+    border: 1.5px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    font-size: 16px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+      inset 0 2px 4px rgba(0, 0, 0, 0.02),
+      0 1px 2px rgba(0, 0, 0, 0.02);
+    letter-spacing: 0.3px;
+  }
+
+  .ios-input:focus {
+    outline: none;
+    background: #FFFFFF;
+    box-shadow: 
+      0 0 0 3px rgba(0, 122, 255, 0.15),
+      0 4px 12px rgba(0, 122, 255, 0.08),
+      inset 0 1px 2px rgba(0, 0, 0, 0.02);
+    border-color: #007AFF;
+    transform: translateY(-1px);
+  }
+
+  /* Premium iOS Switch (using checkbox) */
+  .ios-switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 32px;
+  }
+
+  .ios-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .ios-switch-slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: linear-gradient(135deg, #D1D1D6 0%, #C7C7CC 100%);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+      inset 0 2px 4px rgba(0, 0, 0, 0.1),
+      0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  .ios-switch input:checked + .ios-switch-slider {
+    background: linear-gradient(135deg, #34C759 0%, #30B350 100%);
+    box-shadow: 
+      0 4px 12px rgba(52, 199, 89, 0.3),
+      inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  }
+
+  .ios-switch-slider:before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 3px;
+    bottom: 3px;
+    background: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 100%);
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+      0 3px 8px rgba(0, 0, 0, 0.15),
+      0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .ios-switch input:checked + .ios-switch-slider:before {
+    transform: translateX(20px);
+  }
+
+  /* Premium Scroll container */
+  .ios-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+  }
+
+  .ios-scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .ios-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .ios-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.1) 100%);
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .ios-scroll::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.2) 100%);
+    background-clip: padding-box;
+  }
+}
+
+@layer utilities {
+  /* Premium Spring animation utility */
+  .spring {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* Premium Active state utility */
+  .active-scale {
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .active-scale:active {
+    transform: scale(0.96);
+  }
+
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide up animation */
+  .animate-slide-up {
+    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Premium shadow utilities */
+  .shadow-ios-sm {
+    box-shadow: 
+      0 2px 8px rgba(0, 0, 0, 0.04),
+      0 1px 2px rgba(0, 0, 0, 0.02);
+  }
+
+  .shadow-ios-md {
+    box-shadow: 
+      0 4px 16px rgba(0, 0, 0, 0.06),
+      0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+
+  .shadow-ios-lg {
+    box-shadow: 
+      0 10px 40px rgba(0, 0, 0, 0.08),
+      0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .shadow-ios-xl {
+    box-shadow: 
+      0 20px 60px rgba(0, 0, 0, 0.12),
+      0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  /* iOS Status Bar Space */
+  .ios-status-bar {
+    height: 44px;
+  }
+
+  /* Safe area insets */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
